@@ -20,6 +20,7 @@
   "homepage": "https://github.com/TheMLevin/Advent-Of-Code-2020-Answer-Key#readme",
   "dependencies": {
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "react-scripts": "^4.0.1"
   }
 }
