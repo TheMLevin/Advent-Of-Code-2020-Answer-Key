@@ -2,10 +2,12 @@
   "name": "advent-of-code-2020-answer-key",
   "version": "1.0.0",
   "description": "Cheat Sheet for the 2020 Advent of Code Challenge",
-  "main": "index.html",
+  "main": "public/index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server main.js",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
     "D1P2": "node ./challenges/Day1Part2"
   },
   "author": "Mark Levin",
