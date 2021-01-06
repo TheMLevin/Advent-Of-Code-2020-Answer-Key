@@ -1,0 +1,2 @@
+(this["webpackJsonpadvent-of-code-2020-answer-key"]=this["webpackJsonpadvent-of-code-2020-answer-key"]||[]).push([[0],{11:function(e,n,a){"use strict";a.r(n);var o=a(0),t=a.n(o),s=a(2),c=a.n(s),p=a(3),d=a(4),l=a(6),r=a(5);t.a.Component;console.log("index.js called"),c.a.render(t.a.createElement("App",null),document.getElementById("app"))}},[[11,1,2]]]);
+//# sourceMappingURL=main.a691e615.chunk.js.map
