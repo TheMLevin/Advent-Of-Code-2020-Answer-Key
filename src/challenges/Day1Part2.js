@@ -1,4 +1,4 @@
-function D1P2(input){
+export function D1P2(input){
     const nums = input.split('\n').map(x => parseInt(x.trim()))
     let numkeys = nums.reduce((dict, key) => Object.assign(dict, {[key]: null}), {})
     for (let x of nums) {
