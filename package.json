@@ -1,8 +1,9 @@
 {
   "name": "advent-of-code-2020-answer-key",
   "version": "1.0.0",
+  "homepage": "./",
   "description": "Cheat Sheet for the 2020 Advent of Code Challenge",
-  "main": "public/index.html",
+  "main": "index.html",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -19,7 +20,6 @@
   "bugs": {
     "url": "https://github.com/TheMLevin/Advent-Of-Code-2020-Answer-Key/issues"
   },
-  "homepage": "https://github.com/TheMLevin/Advent-Of-Code-2020-Answer-Key#readme",
   "dependencies": {
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
