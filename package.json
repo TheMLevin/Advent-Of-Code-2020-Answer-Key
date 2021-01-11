@@ -1,7 +1,6 @@
 {
   "name": "advent-of-code-2020-answer-key",
   "version": "1.0.0",
-  "homepage": "./",
   "description": "Cheat Sheet for the 2020 Advent of Code Challenge",
   "main": "index.html",
   "scripts": {
