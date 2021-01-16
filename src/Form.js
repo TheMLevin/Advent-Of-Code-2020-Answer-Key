@@ -32,10 +32,8 @@ export class Form extends React.Component{
         if(this.state.input.length === 0){
             message.push("NO INPUT PROVIDED")
         }
-        if(message.length === 1){
-            alert(`${message[0]}\nPlease Fix the Above Problem`)
-        } else if(message.length >= 1){
-            alert(`${message.join('\n')}\nPlease Fix the Above Problems`)
+        if(message.length >= 1){
+            alert(`${message.join('\n')}\nPlease Fix the Above Problem${message.length > 1 ? 's' : ''}`)
         } else {
             this.props.assign(`D${this.state.day}P${this.state.part}`, this.state.input)
         }

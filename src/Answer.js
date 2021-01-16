@@ -9,16 +9,13 @@ export class Answer extends React.Component{
     call(){
         if (this.props.input.length != 0){
             try{
-                const chl = require(`./challenges/${this.props.script}`);
-                console.log('pass')
-                const ans = Object.values(chl)[0](this.props.input);
-                return ans
+                return Object.values(require(`./challenges/${this.props.script}`))[0](this.props.input);
             } catch(err) {
                 console.log('catch')
-                if("MODULE_NOT_FOUND" === err.code){
-                    alert("Sorry, I haven't written that one yet")
-                } else {
+                if("Invalid Input" === err){
                     alert("This input is invalid for this challenge")
+                } else {
+                    alert("Sorry, I haven't written that one yet")
                 }
                 console.log(err)
                 return ''
