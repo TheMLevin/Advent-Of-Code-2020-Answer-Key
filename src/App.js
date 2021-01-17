@@ -16,7 +16,7 @@ export class App extends React.Component {
     }
 
     render(){
-        console.log('App.js called');
+        //console.log('App.js called');
         return (
             React.createElement('div', null, 
                 React.createElement(Intro, null),
@@ -24,5 +24,5 @@ export class App extends React.Component {
                 React.createElement(Answer, {script: this.state.script, input: this.state.input})
             )
         )
-    }
+	}
 }

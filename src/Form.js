@@ -40,7 +40,7 @@ export class Form extends React.Component{
     }
 
     render(){
-        console.log('Form.js called');
+        //console.log('Form.js called');
         return(
             React.createElement('div', null,
                 React.createElement('label', {htmlFor: "day"}, "Day: "),
