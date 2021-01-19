@@ -9,6 +9,7 @@ export class Answer extends React.Component{
     call(){
         if (this.props.input.length != 0){
             try{
+                Object.values(require(`./inputCheck/${this.props.script.split('P')[0]}.js`))[0](this.props.input)
                 return Object.values(require(`./challenges/${this.props.script}.js`))[0](this.props.input) || alert("Your input may be incomplete. Try again.")
             } catch(err) {
                 console.log(err)

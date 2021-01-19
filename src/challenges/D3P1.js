@@ -1,7 +1,5 @@
 export function D3P1(input){
-    const lines = input.trim().split('\n')
-    lines.forEach(num => {if(!RegExp('^[#\.]+\n?$').test(num)) throw "Invalid Input"});
-    const slopes = lines.map(row => row.trim())
+    const slopes = input.trim().split('\n').map(row => row.trim())
 
     let trees = 0
     let y = 0

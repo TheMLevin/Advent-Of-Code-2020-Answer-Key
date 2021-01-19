@@ -1,7 +1,5 @@
 export function D3P2(input){
-    const lines = input.trim().split('\n')
-    lines.forEach(num => {if(!RegExp('^[#\.]+\n?$').test(num)) throw "Invalid Input"});
-    const slopes = lines.map(row => row.trim())
+    const slopes = input.trim().split('\n').map(row => row.trim())
 
     let product = 1;
     for (let [a, b] of [[1,1],[3,1],[5,1],[7,1],[1,2]]){

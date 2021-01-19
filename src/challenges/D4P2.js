@@ -1,8 +1,5 @@
 export function D4P2(input){
-    const lines = input.trim().split('\n\n')
-    lines.forEach(num => {if(!RegExp('^(?:[a-z]{3}:[#0-9a-z]+[ \n]?){1,8}$').test(num)) throw "Invalid Input"});
-    const passports = lines.map(line => line.replaceAll('\n', ' ').split(' ').map(pair => pair.split(':')))
-    
+    const passports = input.trim().split('\n\n').map(line => line.replaceAll('\n', ' ').split(' ').map(pair => pair.split(':')))
     let valid = 0
     const IDtypes = ["byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"]
     const regex = [RegExp('^(?:19(?:[2-9][0-9])|200[0-2])$'),
