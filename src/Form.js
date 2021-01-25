@@ -3,40 +3,28 @@ import React from 'react'
 export class Form extends React.Component{
     constructor(props){
         super(props);
-        this.state = {day: 1, part: 1, input: ""}
+        this.state = {day: 1, part: 1, input: "", pass: false, check: Object.values(require('./inputCheck/D1'))[0]}
         this.changeDay = this.changeDay.bind(this)
         this.changePart = this.changePart.bind(this)
         this.changeInput = this.changeInput.bind(this)
-        this.checkForm = this.checkForm.bind(this)
     }
-    changeDay(x) {
-        this.setState({day: x.target.value})
+    changeDay(x){
+        this.props.clear()
+        try{
+            let func = Object.values(require(`./inputCheck/D${x.target.value}`))[0]
+            func(this.state.input)
+            this.setState({day: parseInt(x.target.value), check: func})
+        } catch{}
     }
 
     changePart(x) {
-        this.setState({part: x.target.value})
+        this.props.clear()
+        if (['1','2'].includes(x.target.value)) this.setState({part: parseInt(x.target.value)})
     }
 
     changeInput(x) {
+        this.props.clear()
         this.setState({input: x.target.value})
-    }
-
-    checkForm(){
-        let message = []
-        if(1 > this.state.day || this.state.day > 25){
-            message.push('INVALID DAY PROVIDED')
-        }
-        if(1 > this.state.part || this.state.part > 2){
-            message.push('INVALID PART PROVIDED')
-        }
-        if(this.state.input.length === 0){
-            message.push("NO INPUT PROVIDED")
-        }
-        if(message.length >= 1){
-            alert(`${message.join('\n')}\nPlease Fix the Above Problem${message.length > 1 ? 's' : ''}`)
-        } else {
-            this.props.assign(`D${this.state.day}P${this.state.part}`, this.state.input)
-        }
     }
 
     render(){
@@ -51,9 +39,9 @@ export class Form extends React.Component{
                 React.createElement('br', null),
                 React.createElement('label', {htmlFor: "text"}, "What is your input?"),
                 React.createElement('br', null),
-                React.createElement('textarea', {cols: '50', rows: '20', id: "text", placeholder: 'Paste Your Input', onChange: this.changeInput}),
+                React.createElement('textarea', {cols: '50', rows: '20', id: "text", placeholder: 'Paste Your Input', style: {background: this.state.check(this.state.input) || this.state.input.length == 0 ? 'white' : 'pink'} , onChange: this.changeInput}),
                 React.createElement('br', null),
-                React.createElement('button', {onClick: this.checkForm}, "Find Answer")
+                this.state.check(this.state.input) ? React.createElement('button', {onClick: () => this.props.assign(`D${this.state.day}P${this.state.part}`, this.state.input)}, "Find Answer") : React.createElement('br', null)
             )
         );
     }
