@@ -12,7 +12,7 @@ export class Form extends React.Component{
         this.props.clear()
         try{
             let func = Object.values(require(`./inputCheck/D${x.target.value}`))[0]
-            func(this.state.input)
+            func(this.state.input) //Once all days are done, this won't be necessary anymore
             this.setState({day: parseInt(x.target.value), check: func})
         } catch{}
     }

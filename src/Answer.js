@@ -7,7 +7,11 @@ export class Answer extends React.Component{
     }
 
     call(){
-        return this.props.clear ? '' : Object.values(require(`./challenges/${this.props.script}.js`))[0](this.props.input) || alert("Your input may be incomplete. Try again.")
+        try{
+            return this.props.clear ? '' : Object.values(require(`./challenges/${this.props.script}.js`))[0](this.props.input) || alert("Your input may be incomplete. Try again.")
+        } catch(err){
+            console.log(err) //Once all days are done, this won't be necessary anymore
+        }
     }
 
    render(){
